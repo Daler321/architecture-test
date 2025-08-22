@@ -1,12 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import { usePathname } from "next/navigation";
-import styles from "./header.module.css";
+import styles from "./footer.module.css";
 
-export default function Header() {
+export default function Footer() {
   const pathname = usePathname();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
     {
@@ -28,17 +26,18 @@ export default function Header() {
   ];
 
   return (
-    <div className={styles.headerContainer}>
-      <h1 className={styles.headerTitle}>
+    <div className={styles.footerContainer}>
+      <h1 className={styles.footerTitle}>
         <a href="/">architecture</a>
+        <span>(с) 2025, all rights reserved</span>
       </h1>
-      <div className={styles.headerNavContainer}>
-        <div className={styles.headerNavItems}>
+      <div className={styles.footerNavContainer}>
+        <div className={styles.footerNavItems}>
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
               <a
-                className={`${styles.headerNavItem} ${
+                className={`${styles.footerNavItem} ${
                   isActive ? styles.active : ""
                 }`}
                 href={item.href}
@@ -51,13 +50,6 @@ export default function Header() {
         </div>
         <div className={styles.verticalLine} />
         <span>+7 (911) 818-34-10</span>
-      </div>
-      <div
-        className={`${styles.menuIcon} ${isMenuOpen ? styles.active : ""}`}
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      >
-        <span></span>
-        <span></span>
       </div>
     </div>
   );
