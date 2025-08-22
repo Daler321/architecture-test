@@ -6,5 +6,6 @@ const client = new ApolloClient({
   }),
   cache: new InMemoryCache(),
 });
+// https://r810983k-1337.euw.devtunnels.ms/graphql
 
 export default client;
