@@ -1,8 +1,44 @@
-import Image from "next/image";
+import { gql } from "@apollo/client";
+import HomeHeader from "@/components/home-header";
+import client from "@/lib/apolloClient";
 
 export default function Home() {
+  client.query({
+    query: gql`
+      query Query {
+        articles {
+          documentId
+          seo {
+            slug
+            title
+          }
+          Hero {
+            description
+            id
+            title
+            background {
+              url
+              previewUrl
+              name
+              caption
+              alternativeText
+            }
+          }
+        }
+        tags {
+          documentId
+          seo {
+            slug
+            title
+          }
+        }
+      }
+    `,
+  });
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+    <div>
+      <HomeHeader />
       <h1>hello</h1>
     </div>
   );

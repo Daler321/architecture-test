@@ -9,10 +9,12 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@apollo/client": "^4.0.0",
+    "graphql": "^16.11.0",
+    "graphql-tag": "^2.12.6",
     "next": "15.5.0",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "strapi-sdk-js": "^3.0.0"
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
