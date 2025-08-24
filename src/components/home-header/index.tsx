@@ -2,6 +2,8 @@ import styles from "./home-header.module.css";
 import Image from "next/image";
 import title from "@/assets/title.svg";
 import homeImage from "@/assets/house.png";
+import Button from "@/components/ui/button";
+import Link from "next/link";
 
 export default function HomeHeader() {
   return (
@@ -21,7 +23,9 @@ export default function HomeHeader() {
           aspirations. We create the alchemy of luxury and the enjoyment of our
           clientèle
         </p>
-        <button>All projects</button>
+        <Link href="/">
+          <Button>All projects</Button>
+        </Link>
       </div>
     </div>
   );

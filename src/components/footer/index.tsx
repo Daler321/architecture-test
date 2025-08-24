@@ -49,7 +49,9 @@ export default function Footer() {
           })}
         </div>
         <div className={styles.verticalLine} />
-        <span>+7 (911) 818-34-10</span>
+        <span>
+          <a href="tel:+79118183410">+7 (911) 818-34-10</a>
+        </span>
       </div>
     </div>
   );

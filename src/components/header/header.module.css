@@ -6,6 +6,8 @@
   padding: 0 164px 0 64px;
   border-bottom: 1px solid #d6d9dc;
   background: white;
+  color: #000;
+  position: relative;
 
   @media screen and (max-width: 1024px) {
     padding: 0 64px;
@@ -13,6 +15,7 @@
 
   @media screen and (max-width: 768px) {
     padding: 0 20px;
+    height: 52px;
   }
 }
 
@@ -94,12 +97,43 @@
   height: 1px;
   background-color: #000;
   transition: all 0.3s ease-in-out;
+  z-index: 100;
 }
 
 .menuIcon.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(0, 0);
 }
 
 .menuIcon.active span:nth-child(2) {
-  transform: rotate(-45deg) translate(-5px, 5px);
+  transform: rotate(-45deg) translate(0, 0);
+}
+
+.mobileMenu {
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 250px;
+    background: white;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+  }
+}
+
+.mobileMenu.open {
+  transform: translateY(52px);
+  opacity: 1;
+  pointer-events: auto;
 }

@@ -1,0 +1,47 @@
+.articleNavigation {
+  display: flex;
+  gap: 40px;
+  padding: 46px 60px;
+  border-top: 1px solid #5b5c5d;
+  border-bottom: 1px solid #5b5c5d;
+
+  @media (max-width: 768px) {
+    padding: 20px 20px;
+    gap: 24px;
+  }
+}
+
+.articleNavigation a {
+  position: relative;
+  text-wrap: nowrap;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+.articleNavigation a:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -20px;
+  width: 1px;
+  height: 19px;
+  background: #5b5c5d;
+  z-index: -1;
+
+  @media (max-width: 768px) {
+    height: 10px;
+    right: -12px;
+  }
+}
+
+.articleNavigation a:not(.active):hover {
+  text-decoration: underline;
+}
+
+.articleNavigation a.active {
+  color: #9c9393;
+  cursor: default;
+}

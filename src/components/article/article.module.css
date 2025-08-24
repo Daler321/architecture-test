@@ -1,0 +1,64 @@
+.article {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+
+  color: white;
+
+  @media (max-width: 768px) {
+    gap: 12px;
+  }
+}
+
+.article:hover {
+  cursor: pointer;
+}
+
+.articleImage {
+  height: 360px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 10px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    height: 208px;
+    margin-bottom: 8px;
+  }
+}
+
+.articleImage:hover img {
+  transform: scale(1.4);
+}
+
+.articleImage img {
+  transition: transform 16s linear;
+  object-fit: cover;
+  object-position: center;
+}
+
+.articleTitle {
+  margin: 0;
+  font-size: 32px;
+  line-height: 160%;
+  letter-spacing: 0%;
+
+  @media (max-width: 1200px) {
+    font-size: 20px;
+  }
+}
+
+.articleDescription {
+  margin: 0;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0%;
+
+  @media (max-width: 1200px) {
+    font-size: 14px;
+  }
+}

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import styles from "./header.module.css";
 
 export default function Header() {
@@ -30,14 +31,14 @@ export default function Header() {
   return (
     <div className={styles.headerContainer}>
       <h1 className={styles.headerTitle}>
-        <a href="/">architecture</a>
+        <Link href="/">architecture</Link>
       </h1>
       <div className={styles.headerNavContainer}>
         <div className={styles.headerNavItems}>
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
-              <a
+              <Link
                 className={`${styles.headerNavItem} ${
                   isActive ? styles.active : ""
                 }`}
@@ -45,12 +46,14 @@ export default function Header() {
                 key={item.label}
               >
                 {item.label}
-              </a>
+              </Link>
             );
           })}
         </div>
         <div className={styles.verticalLine} />
-        <span>+7 (911) 818-34-10</span>
+        <span>
+          <a href="tel:+79118183410">+7 (911) 818-34-10</a>
+        </span>
       </div>
       <div
         className={`${styles.menuIcon} ${isMenuOpen ? styles.active : ""}`}
@@ -58,6 +61,17 @@ export default function Header() {
       >
         <span></span>
         <span></span>
+      </div>
+      <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ""}`}>
+        {navItems.map((item) => (
+          <Link
+            href={item.href}
+            key={item.label}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {item.label}
+          </Link>
+        ))}
       </div>
     </div>
   );

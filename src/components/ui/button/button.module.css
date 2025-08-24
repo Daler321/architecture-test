@@ -1,0 +1,57 @@
+.button {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  border-radius: 57px;
+  padding: 20px 50px;
+  border: 1px solid #000000;
+  color: #000000;
+
+  @media (max-width: 1200px) {
+    border-color: #ffffff;
+    color: #ffffff;
+  }
+
+  @media (max-width: 768px) {
+    padding: 16px 30px;
+    font-size: 14px;
+  }
+}
+
+.button:hover {
+  background: #2969ca;
+  border-color: #2969ca;
+  color: white;
+  cursor: pointer;
+
+  @media (max-width: 1200px) {
+    border-color: #2969ca;
+    color: #ffffff;
+  }
+}
+
+.button:active {
+  background: #15458d;
+  border-color: #15458d;
+  color: white;
+}
+
+.button.inverted {
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.button.inverted:hover {
+  border-color: #2969ca;
+  background: none;
+}
+
+.button.inverted:active {
+  border-color: #ffffff;
+}
+
+.button.active {
+  border-color: #ffffff;
+}
