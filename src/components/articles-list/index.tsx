@@ -10,8 +10,8 @@ const ArticlesList = ({ articles }: { articles: IArticle[] }) => {
 
   return (
     <div className={styles.articlesListContainer}>
-      {articles.map((article) => (
-        <Article key={article.id} {...article} />
+      {articles.map((article, i) => (
+        <Article key={`${article.documentId}-${i}`} {...article} />
       ))}
     </div>
   );

@@ -5,30 +5,8 @@ import Button from "../ui/button";
 import styles from "./home-navigation.module.css";
 import buttonStyles from "../ui/button/button.module.css";
 import { usePathname } from "next/navigation";
-
-const tags = [
-  {
-    documentId: "2",
-    seo: {
-      slug: "architectural-design",
-      title: "Architectural Design",
-    },
-  },
-  {
-    documentId: "3",
-    seo: {
-      slug: "residential-interiors",
-      title: "Residential Interiors",
-    },
-  },
-  {
-    documentId: "4",
-    seo: {
-      slug: "commercial-interior",
-      title: "Commercial Interior",
-    },
-  },
-];
+import { useQuery } from "@apollo/client/react";
+import { getTags } from "@/lib/query";
 
 const NavigationItem = ({
   href,
@@ -54,6 +32,7 @@ const NavigationItem = ({
 
 const HomeNavigation = () => {
   const pathname = usePathname();
+  const { data, loading, error } = useQuery(getTags);
 
   return (
     <div className={styles.homeNavigationContainer}>
@@ -62,7 +41,7 @@ const HomeNavigation = () => {
         title="All projects"
         isActive={pathname === `/`}
       />
-      {tags.map((tag) => (
+      {data?.tags.map((tag) => (
         <NavigationItem
           href={`/${tag.documentId}`}
           title={tag.seo.title}

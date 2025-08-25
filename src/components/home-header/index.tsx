@@ -10,10 +10,10 @@ export default function HomeHeader() {
     <div className={styles.homeHeaderContainer}>
       <div className={styles.homeImagesContainer}>
         <div className={styles.homeTitle}>
-          <Image src={title} alt="title" />
+          <Image src={title} alt="title" priority />
         </div>
         <div className={styles.homeImage}>
-          <Image src={homeImage} alt="homeImage" />
+          <Image src={homeImage} alt="homeImage" priority />
         </div>
       </div>
       <div className={styles.homeContentContainer}>

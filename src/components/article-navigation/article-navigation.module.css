@@ -4,6 +4,7 @@
   padding: 46px 60px;
   border-top: 1px solid #5b5c5d;
   border-bottom: 1px solid #5b5c5d;
+  overflow-x: auto;
 
   @media (max-width: 768px) {
     padding: 20px 20px;
