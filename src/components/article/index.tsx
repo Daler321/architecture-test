@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./article.module.css";
 import { IArticle } from "@/types/article";
 
-const Article = ({ Hero, documentId, seo }: IArticle) => {
+const Article = ({ Hero, documentId }: IArticle) => {
   return (
     <Link href={`/article/${documentId}`}>
       <div className={styles.article}>

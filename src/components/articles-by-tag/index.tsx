@@ -7,7 +7,7 @@ import { getArticlesByTag } from "@/lib/query";
 import ArticlesListSkeleton from "../articles-list-skeleton";
 
 export default function CategoryPage({ tagId }: { tagId: string }) {
-  const { data, loading, error } = useQuery(getArticlesByTag, {
+  const { data, loading } = useQuery(getArticlesByTag, {
     variables: { documentId: tagId },
   });
 

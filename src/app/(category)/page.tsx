@@ -7,7 +7,7 @@ import { useQuery } from "@apollo/client/react";
 import ArticlesListSkeleton from "@/components/articles-list-skeleton";
 
 export default function Home() {
-  const { data, loading, error } = useQuery(getHomeArticles);
+  const { data, loading } = useQuery(getHomeArticles);
 
   if (loading) {
     return (

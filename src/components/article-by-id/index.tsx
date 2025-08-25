@@ -11,7 +11,7 @@ import rehypeRaw from "rehype-raw";
 import Metadata from "@/components/metadata";
 
 export default function ArticleById({ articleId }: { articleId: string }) {
-  const { data, loading, error } = useQuery(getArticle, {
+  const { data } = useQuery(getArticle, {
     variables: { documentId: articleId },
   });
 

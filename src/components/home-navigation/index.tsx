@@ -32,7 +32,7 @@ const NavigationItem = ({
 
 const HomeNavigation = () => {
   const pathname = usePathname();
-  const { data, loading, error } = useQuery(getTags);
+  const { data } = useQuery(getTags);
 
   return (
     <div className={styles.homeNavigationContainer}>

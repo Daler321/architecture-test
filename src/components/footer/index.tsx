@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import styles from "./footer.module.css";
+import Link from "next/link";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -28,7 +29,7 @@ export default function Footer() {
   return (
     <div className={styles.footerContainer}>
       <h1 className={styles.footerTitle}>
-        <a href="/">architecture</a>
+        <Link href="/">architecture</Link>
         <span>(с) 2025, all rights reserved</span>
       </h1>
       <div className={styles.footerNavContainer}>
@@ -36,7 +37,7 @@ export default function Footer() {
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
-              <a
+              <Link
                 className={`${styles.footerNavItem} ${
                   isActive ? styles.active : ""
                 }`}
@@ -44,13 +45,13 @@ export default function Footer() {
                 key={item.label}
               >
                 {item.label}
-              </a>
+              </Link>
             );
           })}
         </div>
         <div className={styles.verticalLine} />
         <span>
-          <a href="tel:+79118183410">+7 (911) 818-34-10</a>
+          <Link href="tel:+79118183410">+7 (911) 818-34-10</Link>
         </span>
       </div>
     </div>
